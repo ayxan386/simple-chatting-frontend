@@ -1,8 +1,8 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --font-mono: ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
-    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace', 'Source Code Pro',
+  --font-mono: 'Source Code Pro', ui-monospace, Menlo, Monaco, 'Cascadia Mono', 'Segoe UI Mono',
+    'Roboto Mono', 'Oxygen Mono', 'Ubuntu Monospace',
     'Fira Mono', 'Droid Sans Mono', 'Courier New', monospace;
 
   --foreground-rgb: 0, 0, 0;
@@ -79,20 +79,10 @@
   margin: 0;
 }
 
-html,
-body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+html, body, #__next {
+  height: 100%;
+  width: 100%;
+  background: #F4F9F9;
 }
 
 a {
@@ -104,4 +94,10 @@ a {
   html {
     color-scheme: dark;
   }
+}
+
+.sub-header {
+  background: #CCF2F4;
+  border: #00000030;
+  padding: 15px;
 }
