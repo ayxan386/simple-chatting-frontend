@@ -1,5 +1,6 @@
 import { AppData, AppKeys, Data } from '@/data/DataProvider';
 import styles from '@/styles/components/Login.module.css'
+import Link from 'next/link';
 import { useContext, useState } from 'react';
 
 export default function LoginPage() {
@@ -13,7 +14,7 @@ export default function LoginPage() {
     async function onLoginButton() {
         try {
 
-            const res = await fetch("http://localhost:8080/users/login", {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/users/login`, {
                 method: "POST",
                 body: JSON.stringify({
                     email, password
@@ -46,7 +47,16 @@ export default function LoginPage() {
                         <span className="input-group-text" id="basic-addon1">Password</span>
                         <input type="password" className="form-control" placeholder="example@lame.com" aria-label="password" aria-describedby="basic-addon1" value={password} onChange={e => setPassword(e.target.value)} />
                     </div>
-                    <button type="button" className="btn btn-primary" onClick={() => onLoginButton()}>Login</button>
+                    
+                    <div className='container'>
+                        <div className='row'>
+                            <div className='col'><button type="button" className="btn btn-primary" onClick={() => onLoginButton()}>Login</button></div>
+                        </div>
+                        <div className='row'>
+                            <div className='col'></div>
+                            <div className='col'><Link href="/register">Don't have an account?</Link></div>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>)
