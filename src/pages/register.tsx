@@ -29,7 +29,7 @@ export default function RegisterPage() {
         }
 
         try {
-            const res = await fetch(`${process.env.SERVER_URL}/users/register`, {
+            const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/users/register`, {
                 method: "POST",
                 body: JSON.stringify({
                     email, username, password, passwordRetry
@@ -39,8 +39,8 @@ export default function RegisterPage() {
                 },
             })
 
-            const data: { token: string } = await res.json();
-            window.localStorage.setItem(AppKeys.token, data.token)
+            const data: string = await res.json();
+            window.localStorage.setItem(AppKeys.token, data)
             window.location.href = "/";
         }
         catch (err) {
@@ -57,7 +57,7 @@ export default function RegisterPage() {
             <div className={styles.central_form}>
                 <h1 className='sub-header'>Register</h1>
                 <form className={styles.input_holder_form}>
-                    {errorMessage != '' ? <div className='row'>{errorMessage}</div> : <></>}
+                    {errorMessage != '' ? <div className={'row ' + styles.error_message}>{errorMessage}</div> : <></>}
                     
                     <div className="input-group mb-3">
                         <span className="input-group-text" id="basic-addon1">Email</span>

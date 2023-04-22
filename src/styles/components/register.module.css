@@ -26,3 +26,12 @@
     display: block;
     text-align: center;
 }
+
+.error_message {
+    padding: 5px;
+    color: red;
+    margin: auto;
+    margin-top: -11%;
+    min-height: 55px;
+    text-decoration: solid;
+}
