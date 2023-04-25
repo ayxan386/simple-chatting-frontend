@@ -1,8 +1,3 @@
-import { AppData, Data } from '@/data/DataProvider';
-import styles from '@/styles/components/Login.module.css'
-import { AppProps } from 'next/app';
-import { useContext, useState } from 'react';
-
 export default function ErrorMessage(details: ErrorDetails) {
     return (
         <>
