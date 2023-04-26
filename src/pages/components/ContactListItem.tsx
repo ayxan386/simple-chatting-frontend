@@ -1,9 +1,10 @@
 import { ContactDto } from "../index";
 import styles from '@/styles/components/Main.module.css'
+import { Dispatch, SetStateAction } from "react";
 
-export default function ContactListItem(details: ContactDto) {
+export default function ContactListItem(details: ContactDto, openSession: Dispatch<SetStateAction<boolean>>) {
     return (
-        <div className={"row " + styles.contact_item} key={details.otherId}>
+        <div className={"row " + styles.contact_item} key={details.otherId} onClick={e => openSession(true)}>
             <div className="col-2">
                 <img className={styles.profile_pic} src={DEFAULT_PIC_URL} />
             </div>
