@@ -50,10 +50,14 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      {/* <div className={styles.pop_up_window + " row"}>
+        <div className={'col-5 ' + styles.pop_up_box}></div>
+      </div> */}
       <main className={`${styles.main} container `}>
         <div className='row'> </div>
         <div className={`${styles.main_wrapper} row`}> 
-        <div className='col-6'>
+        <div className={`col-6 ${styles.main_contact_holder}`}>
+          <h2>My contacts</h2>
           {
             contacts
             .map((contact : ContactDto) => ContactListItem(contact))

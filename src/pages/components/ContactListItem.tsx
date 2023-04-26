@@ -3,11 +3,11 @@ import styles from '@/styles/components/Main.module.css'
 
 export default function ContactListItem(details: ContactDto) {
     return (
-        <div className="row" key={details.otherId}>
-            <div className="col">
+        <div className={"row " + styles.contact_item} key={details.otherId}>
+            <div className="col-2">
                 <img className={styles.profile_pic} src={DEFAULT_PIC_URL} />
             </div>
-            <div className="col">
+            <div className="col-6">
                 <h1>{details.username}</h1>
             </div>
         </div>
