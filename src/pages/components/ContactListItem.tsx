@@ -5,7 +5,7 @@ export default function ContactListItem(details: ContactDto) {
     return (
         <div className="row" key={details.otherId}>
             <div className="col">
-                <img className={styles.profile_pic} src="https://elasticbeanstalk-eu-west-2-475241826661.s3.eu-west-2.amazonaws.com/pngfind.com-placeholder-png-6104451.png" />
+                <img className={styles.profile_pic} src={DEFAULT_PIC_URL} />
             </div>
             <div className="col">
                 <h1>{details.username}</h1>
@@ -13,3 +13,5 @@ export default function ContactListItem(details: ContactDto) {
         </div>
     )
 }
+
+export const DEFAULT_PIC_URL = "https://elasticbeanstalk-eu-west-2-475241826661.s3.eu-west-2.amazonaws.com/pngfind.com-placeholder-png-6104451.png";
